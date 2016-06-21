@@ -1,0 +1,51 @@
+{
+  "name": "redux-static",
+  "version": "1.0.0",
+  "description": "Static initialization for Redux.",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "build": "npm run build:commonjs",
+    "prepublish": "npm run clean && npm run lint && npm run build",
+    "lint": "eslint src test",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "release": "npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandrinodimattia/redux-static.git"
+  },
+  "homepage": "https://github.com/sandrinodimattia/redux-static",
+  "keywords": [
+    "redux"
+  ],
+  "author": "Sandrino Di Mattia",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-redux": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.5",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-loose": "^7.0.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "cross-env": "^1.0.8",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "mocha": "^2.5.3",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.13.1"
+  }
+}
