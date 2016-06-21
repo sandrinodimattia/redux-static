@@ -1,6 +1,6 @@
 # Redux Static
 
-Static initialization for Redux. This allows you to define your actions and state in the same way that you define `propTypes` and `defaultProps`.
+Static initialization for Redux. This allows you to define your actions and state in the same static way that you define `propTypes` and `defaultProps`.
 
 Example:
 
@@ -20,13 +20,12 @@ export default connectContainer(class extends Component {
   }
 
   static propTypes = {
-    configuration: PropTypes.object,
-    saveConfiguration: PropTypes.func.required,
-    fetchConfiguration: PropTypes.func.required
+    invoices: PropTypes.object,
+    fetchInvoices: PropTypes.func.required
   }
 
   componentWillMount() {
-    this.props.fetchConfiguration();
+    this.props.fetchInvoices();
   }
 
   render() {
