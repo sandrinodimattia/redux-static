@@ -27,7 +27,7 @@
   "author": "Sandrino Di Mattia",
   "license": "MIT",
   "peerDependencies": {
-    "react-redux": "^3.0.0"
+    "react-redux": "*"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
